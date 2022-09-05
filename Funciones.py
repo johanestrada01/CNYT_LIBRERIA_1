@@ -60,7 +60,8 @@ def fase(coordenadas, tipo):
         return radians(coordenadas[1])
     else:
         return coordenadas[1]
-
+def ad_vec_complex(vec1,vec2):
+    print(1)
 ##Pruebas:
 print("Pruebas suma:")
 print("1:")
