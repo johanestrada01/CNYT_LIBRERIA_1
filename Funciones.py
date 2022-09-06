@@ -61,45 +61,72 @@ def fase(coordenadas, tipo):
     else:
         return coordenadas[1]
 def ad_vec_complex(vec1,vec2):
-    print(1)
+    new_vec=[0 for i in range(len(vec1))]
+    for i in range(len(new_vec)):
+        new_vec[i]=suma(vec1[i],vec2[i])
+    return new_vec
+def inverse_add(vec):
+    inverse=[]
+    for i in range(len(vec)):
+        inverse.append((-vec[i][0],-vec[i][1]))
+    return inverse
+def esc_complex(esc,vec):
+    for i in range(len(vec)):
+        vec[i]=producto(vec[i],esc)
+    return vec
+def add_mat_complex(mat1,mat2):
+    for i in range(len(mat1)):
+        for j in range(len(mat1[0])):
+            mat1[i][j]=suma(mat1[i][j],mat2[i][j])
+    return mat1
+def inverse_mat(mat):
+    for i in range(len(mat)):
+        mat[i]=inverse_add(mat[i])
+    return mat
+def esc_mat(esc,mat):
+    for i in range(len(mat)):
+        for j in range(len(mat)[0]):
+            mat[i][j]=producto(esc,mat[i][j])
+    return mat
+
 ##Pruebas:
-print("Pruebas suma:")
-print("1:")
-print(suma((1,4),(8,-9)))
-print("2:")
-print(suma((7,-1),(8,-2)))
-print("Pruebas resta:")
-print("1:")
-print(resta((1,4),(-8,-9)))
-print("2:")
-print(resta((7,-1),(8,-2)))
-print("Pruebas producto:")
-print("1:")
-print(producto((1,5),(8,0)))
-print("2:")
-print(producto((7,-1),(4,-2)))
-print("Pruebas division:")
-print("1:")
-print(division((1,4),(-8,-9)))
-print("2:")
-print(division((7,-1),(8,-2)))
-print("Pruebas modulo")
-print("1:")
-print(modulo((1,4)))
-print("2:")
-print(modulo((7,-1)))
-print("Pruebas conjugado")
-print("1:")
-print(conjugado((1,4)))
-print("2:")
-print(conjugado((8,-2)))
-print("Pruebas cambio de coordenadas")
-print("1:")
-print(pol_cart((1,5),"cartesianas"))
-print("2:")
-print(pol_cart((2,45),"polares"))
-print("Pruebas fase")
-print("1:")
-print(fase((1,4),"cartesianas"))
-print("2:")
-print(fase((7,-1),"polares"))
+#print("Pruebas suma:")
+#print("1:")
+#print(suma((1,4),(8,-9)))
+#print("2:")
+#print(suma((7,-1),(8,-2)))
+#print("Pruebas resta:")
+#print("1:")
+#print(resta((1,4),(-8,-9)))
+#print("2:")
+#print(resta((7,-1),(8,-2)))
+#print("Pruebas producto:")
+#print("1:")
+#print(producto((1,5),(8,0)))
+#print("2:")
+#print(producto((7,-1),(4,-2)))
+#print("Pruebas division:")
+#print("1:")
+#print(division((1,4),(-8,-9)))
+#print("2:")
+#print(division((7,-1),(8,-2)))
+#print("Pruebas modulo")
+#print("1:")
+#print(modulo((1,4)))
+#print("2:")
+#print(modulo((7,-1)))
+#print("Pruebas conjugado")
+#print("1:")
+#print(conjugado((1,4)))
+#print("2:")
+#print(conjugado((8,-2)))
+#print("Pruebas cambio de coordenadas")
+#print("1:")
+#print(pol_cart((1,5),"cartesianas"))
+#print("2:")
+#print(pol_cart((2,45),"polares"))
+#print("Pruebas fase")
+#print("1:")
+#print(fase((1,4),"cartesianas"))
+#print("2:")
+#print(fase((7,-1),"polares"))
