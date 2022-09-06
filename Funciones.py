@@ -85,9 +85,37 @@ def inverse_mat(mat):
     return mat
 def esc_mat(esc,mat):
     for i in range(len(mat)):
-        for j in range(len(mat)[0]):
+        for j in range(len(mat[0])):
             mat[i][j]=producto(esc,mat[i][j])
     return mat
+def traspuesta(mat):
+    elements=[]
+    if type(mat[0])==int:
+        new_mat = [[] for i in range(len(mat))]
+        for i in range(len(mat)):
+            new_mat[i].append(mat[i])
+    else:
+        new_mat = [[] for i in range(len(mat[0]))]
+        for i in range(len(mat[0])):
+            for j in range(len(mat)):
+                new_mat[i].append(mat[j][i])
+    return new_mat
+def conjugada(mat):
+    if type(mat[0])==tuple:
+        for i in range(len(mat)):
+            mat[i]=(mat[i][0],-mat[i][1])
+    else:
+        for i in range(len(mat)):
+            for j in range(len(mat[0])):
+                mat[i][j]=(mat[i][j][0],-mat[i][j][1])
+    return mat
+def adjunta(mat):
+    return(conjugada(traspuesta(mat)))
+def prod_mat(mat1,mat2):
+    resultado=[[] for i in range(len(mat1))]
+    for i in range(len(mat1)):
+        for j in range(len(mat[0])):
+            1
 
 ##Pruebas:
 #print("Pruebas suma:")
