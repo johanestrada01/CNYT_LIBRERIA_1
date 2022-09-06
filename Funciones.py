@@ -114,8 +114,13 @@ def adjunta(mat):
 def prod_mat(mat1,mat2):
     resultado=[[] for i in range(len(mat1))]
     for i in range(len(mat1)):
-        for j in range(len(mat[0])):
-            1
+        suma=0
+        for j in range(len(mat1[0])):
+            print(i,j)
+            suma+=mat1[i][j]*mat2[j][i]
+        resultado[i].append(suma)
+    return resultado
+print(prod_mat([[1,2],[3,4],[5,6]],[[1,2,3],[1,2,3]]))
 
 ##Pruebas:
 #print("Pruebas suma:")
