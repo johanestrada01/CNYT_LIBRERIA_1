@@ -137,11 +137,19 @@ def prod_int(vec1,vec2):
     salida=(0,0)
     for i in range(len(vec1)):
         vec1[i]=conjugado(vec1[i])
-        print(vec1[i],vec2[i])
         salida=suma(salida,producto(vec1[i],vec2[i]))
     return salida
 def norma(vec):
-    return prod_int(vec[:],vec)
+    prod=prod_int(vec[:],vec)
+    return sqrt(prod[0])
+def distancia(vec1,vec2):
+    new_vec=[]
+    for i in range(len(vec2)):
+        vec2[i]=-vec2[i][0],-vec2[i][1]
+        new_vec.append(suma(vec1[i],vec2[i]))
+    return norma(new_vec)
+print(distancia([(0,0),(0,0),(0,0),(0,0)],[(4,3),(6,-4),(12,-7),(0,13)]))
+
 
 
 ##Pruebas:
