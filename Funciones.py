@@ -112,15 +112,37 @@ def conjugada(mat):
 def adjunta(mat):
     return(conjugada(traspuesta(mat)))
 def prod_mat(mat1,mat2):
-    resultado=[[] for i in range(len(mat1))]
-    for i in range(len(mat1)):
-        suma=0
-        for j in range(len(mat1[0])):
-            print(i,j)
-            suma+=mat1[i][j]*mat2[j][i]
-        resultado[i].append(suma)
-    return resultado
-print(prod_mat([[1,2],[3,4],[5,6]],[[1,2,3],[1,2,3]]))
+    n=len(mat1)
+    m=len(mat2[0])
+    prod=[["" for j in range(m)] for i in range(n)]
+    for i in range(n):
+        for j in range(m):
+            valor=(0,0)
+            for k in range(len(mat2)):
+                val1=mat2[k][j]
+                val2=mat1[i][k]
+                valor=suma(valor,producto(val1,val2))
+            prod[i][j]=valor
+    return prod
+def acc_mat_vec(mat,vec):
+    fil=len(mat)
+    new_vec=[0 for i in range(fil)]
+    for i in range(len(mat)):
+        valor=(0,0)
+        for j in range(len(mat[i])):
+            valor=suma(valor,producto(mat[i][j],vec[j]))
+        new_vec[i]=valor
+    return new_vec
+def prod_int(vec1,vec2):
+    salida=(0,0)
+    for i in range(len(vec1)):
+        vec1[i]=conjugado(vec1[i])
+        print(vec1[i],vec2[i])
+        salida=suma(salida,producto(vec1[i],vec2[i]))
+    return salida
+def norma(vec):
+    return prod_int(vec[:],vec)
+
 
 ##Pruebas:
 #print("Pruebas suma:")
