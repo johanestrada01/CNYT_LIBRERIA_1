@@ -213,12 +213,6 @@ def prod_tensor(element1,element2):
     for i in element1:
         print(i)
 
-print(prod_tensor([[(1,0),(2,3)],[(1,0),(1,1)]],[[(1,0),(2,3)],[(1,0),(1,1)]]))
-
-
-
-
-
 ##Pruebas:
 print("Pruebas suma:")
 print("1:")
