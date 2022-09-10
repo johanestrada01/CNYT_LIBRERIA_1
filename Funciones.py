@@ -147,6 +147,10 @@ def adjunta(mat):
     """
     return(conjugada(traspuesta(mat)))
 def prod_mat(mat1,mat2):
+    """
+    matriz,matriz->matriz
+    retorna el producto de dos matrices
+    """
     n=len(mat1)
     m=len(mat2[0])
     prod=[["" for j in range(m)] for i in range(n)]
@@ -160,6 +164,10 @@ def prod_mat(mat1,mat2):
             prod[i][j]=valor
     return prod
 def acc_mat_vec(mat,vec):
+    """
+    matriz,vector->matriz/vector
+    retorna el resultado de el producto de un vector y una matriz
+    """
     fil=len(mat)
     new_vec=[0 for i in range(fil)]
     for i in range(len(mat)):
@@ -304,3 +312,13 @@ print("1:")
 print(prod_mat([[(1,8),(0,3),(4,4)],[(0,1),(0,0),(-100,9)],[(1,0),(4,1),(0,9)]],[[(14,-8),(30,13),(14,40)],[(0,1),(0,0),(-100,90)],[(1,-10),(4,0),(1,1)]]))
 print("2:")
 print(prod_mat([[(1,8),(0,3),(4,4)],[(0,1),(0,0),(-100,9)],[(1,0),(4,1),(0,9)]],[[(1,8),(0,3),(4,4)],[(10,10),(0,0),(21,9)],[(1,0),(14,1),(7,9)]]))
+print("Pruebas accion matriz sobre vector")
+print("1:")
+print(acc_mat_vec([[(1,0),(2,4)],[(5,4),(1,1)]],[(1,0),(4,1),(0,9)]))
+print("2:")
+print(acc_mat_vec([[(1,8),(0,3),(4,4)],[(0,1),(0,0),(-100,9)],[(1,0),(4,1),(0,9)]],[(1,8),(0,3),(4,4)]))
+print("pruebas Producto interno de dos vectores")
+print("1:")
+print(prod_int([(1,0),(2,4)],[(1,10),(7,8)]))
+print("2:")
+print(prod_int([(1,8),(0,3),(4,4)],[(0,1),(0,0),(-100,9)]))
